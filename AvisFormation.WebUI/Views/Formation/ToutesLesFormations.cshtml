@@ -1,0 +1,59 @@
+﻿@model AvisFormation.WebUI.Models.AccueilViewModel
+@{
+    ViewBag.Title = "ToutesLesFormations";
+}
+
+<div class="container bg-white padding30">
+    <h2>ToutesLesFormations</h2>
+    <div class="container text-center">
+        @foreach (var dto in Model.ListFormations)
+        {
+            @Html.Partial("TuileFormation", dto)
+            @*<article class="info-block text-left col-md-3 col-sm-6">
+                <h4>
+                    @Html.ActionLink(dto.Formation.Nom, "DetailsFormation", "Formation",
+                               new { nomSeo = dto.Formation.NomSeo }, new { @class = "lien-formation" })
+                </h4>
+                <p>
+                    @if (dto.Note == 0)
+                    {
+                        <span>Aucun avis</span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-star yellow"></span>
+                        if (dto.Note > 1)
+                        {
+                            <span class="glyphicon glyphicon-star yellow"></span>
+                        }
+                        if (dto.Note > 2)
+                        {
+                            <span class="glyphicon glyphicon-star yellow"></span>
+                        }
+                        if (dto.Note > 3)
+                        {
+                            <span class="glyphicon glyphicon-star yellow"></span>
+                        }
+                        if (dto.Note > 4)
+                        {
+                            <span class="glyphicon glyphicon-star yellow"></span>
+                        }
+                        <span>@dto.Note / 5</span>
+                    }
+                </p>
+
+
+                <div>@dto.Formation.Description</div>
+            </article>*@
+
+        }
+    </div>
+    @*foreach (var formation in Model)
+        {
+            <div><span>Nom : </span><span>@formation.Nom</span></div>
+            <div><span>Description : </span><span>@formation.Description</span></div>
+            <div>@formation.NomSeo</div>
+
+        }*@
+
+</div>

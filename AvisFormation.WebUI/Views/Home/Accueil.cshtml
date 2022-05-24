@@ -1,0 +1,128 @@
+﻿@model AvisFormation.WebUI.Models.AccueilViewModel
+@{
+    ViewBag.Title = "Accueil";
+}
+
+<div class="jumbotron text-center">
+    <h1>Avis Formation</h1>
+    <p>Choisissez la meilleure formation!</p>
+</div>
+
+
+<div class="container text-center">
+    @foreach (var dto in Model.ListFormations)
+    {
+        @Html.Partial("TuileFormation", dto)
+        @*<article class="info-block text-left col-md-3 col-sm-6">
+                <h4>
+                    @Html.ActionLink(dto.Formation.Nom, "DetailsFormation", "Formation",
+                               new { nomSeo = dto.Formation.NomSeo }, new {@class="lien-formation"})
+                                </h4>
+                <p>
+                @if (dto.Note == 0)
+                {
+                <span>Aucun avis</span>
+                }
+                else {
+                <span class="glyphicon glyphicon-star yellow"></span>
+                if (dto.Note > 1)
+                {
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                }
+                if (dto.Note > 2)
+                {
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                }
+                if (dto.Note > 3)
+                {
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                }
+                if (dto.Note > 4)
+                {
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                }
+                <span>@dto.Note / 5</span>
+                          }
+                </p>
+
+
+                <div>@dto.Formation.Description</div>
+            </article>*@
+
+    }
+</div>
+
+<div class="container bg-white text-center padding30">
+    <h2>Pourquoi utiliser AvisFormation?</h2>
+    <h3>Bénéfices formateur</h3>
+
+    <div class="row">
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-shopping-cart logo-small"></span>
+            <h4>Conversion</h4>
+            <p>Améliorez votre taux de conversion</p>
+        </div>
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-fullscreen logo-small"></span>
+            <h4>Visibilité</h4>
+            <p>Améliorez votre visibilité</p>
+        </div>
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-tree-deciduous logo-small"></span>
+            <h4>Fidélisation</h4>
+            <p>Obtenez des clients plus fidèles et engagés</p>
+        </div>
+        <div class="col-md-6">
+            <span class="glyphicon glyphicon-heart-empty logo-small"></span>
+            <h4>Confiance</h4>
+            <p>Vous bénéficierez de retour d'anciens élèves pour améliorer vos produits</p>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center bg-grey padding30">
+    <br/>
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Professionels de la formation, affichez notre badge sur votre site pour augmenter vos conversions</h3>
+        </div>
+        <div class="col-sm-4">
+            <div class="widget">
+                <div class="bg-white roundedtop">
+                    Avis Elèves
+                    4.8/5
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                    <span class="glyphicon glyphicon-star yellow"></span>
+                </div>
+                <div class="bg-orange roundedbottom">
+                    Avis récoltés par AvisFormation.fr
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container bg-white text-center padding30">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="bigpercent">85%</p> 
+            <p><b>85% des internautes consultent les avis clients avant d'acheter en ligne</b></p>
+        </div>
+        <div class="col-md-3">
+            <p class="bigpercent">91%</p>
+            <p><b>91% de ceux qui lisent les avis les considèrent comme le vecteur numéro 1 dans leur décision d'achat</b></p>
+        </div>
+        <div class="col-md-3">
+            <p class="bigpercent">25%</p>
+            <p><b>+25% du taux de conversion pour les sites avec les étoiles Google</b></p>
+        </div>
+        <div class="col-md-3">
+            <p class="bigpercent">80%</p>
+            <p><b>80% des avis ont une note et un commentaire positifs</b></p>
+        </div>
+
+    </div>
+</div>
